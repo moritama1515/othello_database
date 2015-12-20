@@ -3,9 +3,6 @@
   <meta HTTP-equiv="Context-Type" CONTENT="text/html;charset=UTF-8">
   <title>システムへのリンク</title>
   <link rel="stylesheet" type="text/css" href="top.css">
-  <script type="text/javascript" src="draw.js"></script>
-  <script type="text/javascript" src="reversi.js"></script>
-  <script type="text/javascript" src="flip.js"></script>
 <title>検索結果</title></head>
 <body>
 <?php
@@ -23,7 +20,8 @@ $c_name = $_GET['c_name'];
 $b_name = $_GET['b_name'];
 
 print "<h2>". $s_name."定石".$c_name." ".$b_name."</h2>";
-print "<p>詳細ページです．ブラウザを二つ開いてTOPページの盤を横に並べてお使いください.</p>";
+print "<p>詳細ページです．ブラウザを二つ開いて<a href=\"http://turkey.slis.tsukuba.ac.jp/~s1513130/\" target=\"_blank\">TOP</a>ページの盤を横に並べてお使いください.</p>";
+print "<p><a href=\"http://turkey.slis.tsukuba.ac.jp/~s1513130/\" target=\"_blank\">TOPページを開く(別窓で開きます)</a></p>";
 
 
 $sql = "SELECT move.turn,move.map FROM book,category,move where book.sort like \"%".$s_name."%\" and category.name like \"%".$c_name."%\" and book.name like \"%".$b_name."%\" and book.category_id = category.category_id and book.book_id = move.book_id";
